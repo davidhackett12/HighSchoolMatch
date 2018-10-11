@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+
+</head>
+<body>
+
+<h3>Add Student</h3>
+
+<form th:object="${student}" th:method="post">
+    <label>Last Name</label>
+    <input type="text" th:field="*{lastName}"/>
+    <label>First Name</label>
+    <input type="text" th:field="*{firstName}"/>
+    <label>Core GPA</label>
+    <input type="text" th:field="*{coreGpa}"/>
+    <label>Overall Iowa Score</label>
+    <input type="text" th:field="*{ovrIowa}"/>
+    <label>English Iowa Score</label>
+    <input type="text" th:field="*{engIowa}"/>
+    <label>Math Iowa Score</label>
+    <input type="text" th:field="*{mathIowa}"/>
+    <label>School Accepted Into</label>
+    <select>
+        <option th:each="school : ${schools}"
+                th:name="id"
+                th:value="${school.id}"
+                th:text="${school.name}">
+        </option>
+    </select>
+    <input type="submit" value="add student"/>
+</form>
+
+</body>
+</html>
