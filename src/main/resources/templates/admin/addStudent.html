@@ -21,9 +21,8 @@
     <label>Math Iowa Score</label>
     <input type="text" th:field="*{mathIowa}"/>
     <label>School Accepted Into</label>
-    <select>
+    <select th:name="id">
         <option th:each="school : ${schools}"
-                th:name="id"
                 th:value="${school.id}"
                 th:text="${school.name}">
         </option>
